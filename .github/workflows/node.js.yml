@@ -13,10 +13,6 @@ jobs:
   # CI part
   test:
     runs-on: ubuntu-latest
-    # Define `working-directory` if you application is in a subfolder
-    defaults:
-      run:
-        working-directory: userapi
     container: node
     # Service containers to run with `runner-job`
     services:
