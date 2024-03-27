@@ -29,6 +29,7 @@ jobs:
         ports:
           # Maps port 6379 on service container to the host
           - 6379:6379
+          
     strategy:
       matrix:
         node-version: [12.22.0, 14.17.0, 16.x]
@@ -44,3 +45,8 @@ jobs:
     - run: npm ci
     - run: npm run build --if-present
     - run: npm test
+      env:
+        # The hostname used to communicate with the Redis service container
+        REDIS_HOST: localhost
+        # The default Redis port
+        REDIS_PORT: 6379
