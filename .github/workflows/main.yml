@@ -5,9 +5,9 @@ name: Main CI/CD
 
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
   pull_request:
-    branches: [ main ]
+    branches: [ master ]
 
 jobs:
   # CI part
@@ -35,6 +35,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-        cache-dependency-path: '**/package-lock.json'
+        cache-dependency-path: 'package-lock.json'
     - run: npm ci
     - run: npm test
+ 
