@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({
 }))
 app.use(bodyParser.json())
 
-app.get('/', (req, res) => res.send('Hello World!'))
+app.get('/', (req, res) => res.send('Hello World, Imane is the best sorciére in the north of africa, she went to Morroco to bring grigri to use when she meets salim!'))
 
 app.use('/user', userRouter)
 
