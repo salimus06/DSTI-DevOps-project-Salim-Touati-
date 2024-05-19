@@ -1,0 +1,39 @@
+version: '3'
+services:
+  redis:
+    image: redis
+    volumes:
+       - db_data:/data
+  web:
+    build: .
+    ports:
+      - "5000:4000"
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+    depends_on:
+      - redis
+  prometheus:
+    image: prom/prometheus:v2.34.0
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - "9090:9090"
+    depends_on:
+      - web
+      - redis
+  grafana:
+    image: grafana/grafana:latest
+    ports:
+       - "3000:3000"
+    environment:
+        - GF_SECURITY_ADMIN_USER=admin
+        - GF_SECURITY_ADMIN_PASSWORD=admin  # You can change this password
+        - GF_USERS_ALLOW_SIGN_UP=false
+    depends_on:
+        - prometheus
+    volumes:
+        - grafana_data:/var/lib/grafana
+volumes:
+    db_data: {}
+    grafana_data: {}
