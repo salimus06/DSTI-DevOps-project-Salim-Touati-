@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: demo-pvc
+spec:
+  storageClassName: manual
+  accessModes:
+    - ReadWriteOnce
+  capacity:
+    storage: 5Gi
+  hostPath:
+    path: /mnt/c/Users/kacik/Desktop/YML/imane/hi.txt
+    type: DirectoryOrCreate

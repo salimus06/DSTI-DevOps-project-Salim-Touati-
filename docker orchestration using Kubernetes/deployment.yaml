@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: salimus
+  labels:
+    app: salimus
+spec: 
+  replicas: 5
+  selector:
+    matchLabels:
+      app: salimus
+  template:
+    metadata:
+      labels:
+        app: salimus
+    spec:
+      containers:
+      - name: salimus
+        image: st5740526790/aksel
+        volumeMounts:
+        - mountPath: /imane
+          name: site-data
+        ports:
+        - containerPort: 8080  
+      volumes:
+      - name: site-data
+        persistentVolumeClaim:
+          claimName: demo-pvc-claim
