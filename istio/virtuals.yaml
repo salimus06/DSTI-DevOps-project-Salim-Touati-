@@ -1,0 +1,15 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: appp
+spec:
+  hosts:
+  - apps
+  http:
+  - route:   
+    - destination:
+        host: apps
+        subset: v1
+      
+
+      
