@@ -1,0 +1,59 @@
+---
+- hosts: all
+  become: yes
+  gather_facts: yes
+  vars:
+    ansible_python_interpreter: /usr/bin/python3
+
+  tasks:
+    - name: Synchronize application files
+      synchronize:
+        src: "../userapi"
+        dest: /vagrant/userapi
+        delete: yes
+
+    - name: Update package cache
+      apt:
+        update_cache: yes
+
+    - name: Add NodeSource Node.js 14.x repo
+      become: yes
+      shell: curl -fsSL https://deb.nodesource.com/setup_14.x | sudo bash -
+
+    - name: Install Node.js and npm
+      apt:
+        name:
+          - nodejs
+        state: latest
+        update_cache: yes
+
+    
+    - name: Install application dependencies without creating symlinks
+      command: npm install --no-bin-links
+      args:
+         chdir: /vagrant/userapi
+
+    - name: Install Redis Server
+      apt:
+        name: redis-server
+        state: latest
+
+    - name: Start the application
+      command: npm start
+      args:
+        chdir: /vagrant/userapi/src
+
+    - name: Check application health
+      uri:
+        url: http://localhost:8080/health
+        method: GET
+        return_content: yes
+      register: health_check_response
+      until: "'health' in health_check_response.content"
+      retries: 10
+      delay: 5
+      ignore_errors: yes
+
+    - name: Display health check content
+      debug:
+       msg: "Application Health Check: {{ health_check_response.content }}"
