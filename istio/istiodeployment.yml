@@ -1,0 +1,67 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: apps
+  labels:
+    app: apps
+    service: apps
+spec:
+  ports:
+  - port: 8080
+    name: http
+  selector:
+    app: apps
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: appsreview
+  labels:
+    account: apps
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: apps-v1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: apps
+      version: v1
+  template:
+    metadata:
+      labels:
+        app: apps
+        version: v1
+    spec:
+      serviceAccountName: appsreview
+      containers:
+      - name: apps
+        image: st5740526790/istio:v1
+        ports:
+        - containerPort: 8080
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: apps-v2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: apps
+      version: v2
+  template:
+    metadata:
+      labels:
+        app: apps
+        version: v2
+    spec:
+      serviceAccountName: appsreview
+      containers:
+      - name: apps
+        image: st5740526790/istio:v2
+        ports:
+        - containerPort: 8080
+
