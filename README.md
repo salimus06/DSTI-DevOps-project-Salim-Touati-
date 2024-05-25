@@ -70,3 +70,29 @@ npm test
 /main.yml
 
 ![image](https://github.com/salimus06/DevOps-project-DSTI/assets/148533821/793850d6-6a7e-4e19-8f9d-daf891a6e960)
+
+## Iac
+
+Provision the VM with Ansible, which includes installing and running:
+.language runtime
+.database
+.your application (use sync folders)
+.health check of your application
+
+To run the task below, i create a yml file with ansible to create a VM in virtualbox.
+Then use vagant up to create the VM.
+
+![image](https://github.com/salimus06/DevOps-project-DSTI/assets/148533821/c20985f1-b397-4e64-ab14-a07463e24a40)
+![image](https://github.com/salimus06/DevOps-project-DSTI/assets/148533821/9c03f00c-be72-43b0-943f-7e708a3ee311)
+![image](https://github.com/salimus06/DevOps-project-DSTI/assets/148533821/c10e3ef4-591d-46ca-b04a-32061a0e0e1f)
+
+To start the application : put in a browser http://localhost:12345/
+![image](https://github.com/salimus06/DevOps-project-DSTI/assets/148533821/ee840113-6338-4afb-9b0d-0e82f219f29e)
+
+To check the health of  the application : put in a browser http://localhost:12345/health
+![image](https://github.com/salimus06/DevOps-project-DSTI/assets/148533821/7e3323ca-3ef5-43c0-b662-2e2425650f00)
+
+
+
+
+
