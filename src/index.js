@@ -15,8 +15,8 @@ app.use(bodyParser.urlencoded({
 }))
 app.use(bodyParser.json())
 
-app.get('/', (req, res) => res.send('Hello World, Imane is the best sorciére in the north of africa, she went to Morroco to bring grigri to use when she meets salim!'))
-
+app.get('/', (req, res) => res.send('Hello word!'))
+app.get('/health', (req, res) => res.send('app healthy'))
 app.use('/user', userRouter)
 
 const server = app.listen(port, (err) => {
