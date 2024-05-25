@@ -55,6 +55,8 @@ It will output:
 
 Another way to test your REST API is to use [Postman](https://www.postman.com/).
 
+
+
 ## Testing
 
 From the root directory of the project, run:
@@ -62,3 +64,9 @@ From the root directory of the project, run:
 ```
 npm test
 ```
+## CI/CD
+
+/.github/workflows
+/main.yml
+
+![image](https://github.com/salimus06/DevOps-project-DSTI/assets/148533821/793850d6-6a7e-4e19-8f9d-daf891a6e960)
