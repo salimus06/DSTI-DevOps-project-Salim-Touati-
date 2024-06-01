@@ -107,12 +107,24 @@ https://hub.docker.com/repository/docker/st5740526790/aksel/general
 
 ## Docker compose
 
+To create a docker compose that will start my application, you can apply this command:
+
 docker-compose up
 
+![image](https://github.com/salimus06/DevOps-project-DSTI/assets/148533821/32d71a04-bacc-4554-83cf-074f36b50ec0)
+
+Then you can listen the application locally here : 
 ## docker orchestration using Kubernetes
 
 minikube start
+kubectl apply -f pv.yml
+kubectl apply -f pvc.yml
+kubectl apply -f service.yaml
+kubectl apply -f deployment.yaml
 
+
+minikube service salimus-service
+![image](https://github.com/salimus06/DevOps-project-DSTI/assets/148533821/ce221ca2-2e5d-44bb-95b1-408e311a4a08)
 
 
 
