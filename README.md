@@ -92,6 +92,31 @@ To start the application : put in a browser http://localhost:12345/
 To check the health of  the application : put in a browser http://localhost:12345/health
 ![image](https://github.com/salimus06/DevOps-project-DSTI/assets/148533821/7e3323ca-3ef5-43c0-b662-2e2425650f00)
 
+## Docker image
+
+docker build -t aksel .
+
+docker tag hello-world-docker st5740526790/aksel
+docker login
+docker push st5740526790/aksel
+
+https://hub.docker.com/repository/docker/st5740526790/aksel/general
+
+![image](https://github.com/salimus06/DevOps-project-DSTI/assets/148533821/10969b09-fc14-480e-a862-018fa400bd79)
+
+
+## Docker compose
+
+docker-compose up
+
+## docker orchestration using Kubernetes
+
+minikube start
+
+
+
+
+
 
 
 
