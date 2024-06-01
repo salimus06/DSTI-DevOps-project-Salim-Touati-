@@ -111,9 +111,10 @@ To create a docker compose that will start my application, you can apply this co
 
 docker-compose up
 
-![image](https://github.com/salimus06/DevOps-project-DSTI/assets/148533821/32d71a04-bacc-4554-83cf-074f36b50ec0)
+![image](https://github.com/salimus06/DevOps-project-DSTI/assets/148533821/377d424c-1d25-4e77-a96e-28ecffac8fed)
 
-Then you can listen the application locally here : 
+
+Then you can listen the application locally here : localhost:5000
 ## docker orchestration using Kubernetes
 
 minikube start
