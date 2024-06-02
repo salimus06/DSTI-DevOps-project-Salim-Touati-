@@ -75,10 +75,10 @@ npm test
 
 Provision the VM with Ansible, which includes installing and running:
 
-.language runtime  
-.database  
-.your application (use sync folders)  
-.health check of your application  
+**•**language runtime  
+**•**database  
+**•**your application (use sync folders)  
+**•**health check of your application  
 
 To run the task below, i create a yml file with ansible to create a VM in virtualbox.
 Then use vagant up to create the VM.
@@ -119,11 +119,11 @@ docker-compose up
 Then you can listen the application locally here : localhost:5000
 ## docker orchestration using Kubernetes
 
-.minikube start  
-.kubectl apply -f pv.yml  
-.kubectl apply -f pvc.yml  
-.kubectl apply -f service.yaml  
-.kubectl apply -f deployment.yaml  
+**•**minikube start  
+**•**kubectl apply -f pv.yml  
+**•**kubectl apply -f pvc.yml  
+**•**kubectl apply -f service.yaml  
+**•**kubectl apply -f deployment.yaml  
 
 
 minikube service salimus-service
