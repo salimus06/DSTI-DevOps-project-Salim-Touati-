@@ -74,6 +74,7 @@ npm test
 ## Iac
 
 Provision the VM with Ansible, which includes installing and running:
+
 .language runtime
 .database
 .your application (use sync folders)
@@ -118,15 +119,36 @@ docker-compose up
 Then you can listen the application locally here : localhost:5000
 ## docker orchestration using Kubernetes
 
-minikube start
-kubectl apply -f pv.yml
-kubectl apply -f pvc.yml
-kubectl apply -f service.yaml
-kubectl apply -f deployment.yaml
+.minikube start
+.kubectl apply -f pv.yml
+.kubectl apply -f pvc.yml
+.kubectl apply -f service.yaml
+.kubectl apply -f deployment.yaml
 
 
 minikube service salimus-service
 ![image](https://github.com/salimus06/DevOps-project-DSTI/assets/148533821/ce221ca2-2e5d-44bb-95b1-408e311a4a08)
+
+
+ ## Implement Monitoring to your containerized application
+
+ Run this commande docker-compose up
+
+![image](https://github.com/salimus06/DevOps-project-DSTI/assets/148533821/2d55e968-564e-4b64-b601-9d712e8c0c41)
+go to prometheus and chech the status of the application:
+![image](https://github.com/salimus06/DevOps-project-DSTI/assets/148533821/4eaf1d17-60dc-4e59-9d18-fa67923d98cf)
+
+After linking Prometheus to Grafana, i created a dashboard  and an  alert to track the application status:
+![image](https://github.com/salimus06/DevOps-project-DSTI/assets/148533821/e8620cdb-e416-4b95-baee-fe6101049fce)
+
+
+![image](https://github.com/salimus06/DevOps-project-DSTI/assets/148533821/74a6e767-c182-446d-81fc-d426f20048c9)
+![image](https://github.com/salimus06/DevOps-project-DSTI/assets/148533821/7c3a9857-0ba4-4a42-94ea-82b71addbeee)
+![image](https://github.com/salimus06/DevOps-project-DSTI/assets/148533821/132f20f4-3150-4b01-9ba9-5640688bb788)
+
+After running down the application i get an alert:
+
+![image](https://github.com/salimus06/DevOps-project-DSTI/assets/148533821/187b0e2b-0344-4a00-b836-2d31bdcfcc0a)
 
 
 
