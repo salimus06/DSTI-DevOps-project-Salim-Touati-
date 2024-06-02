@@ -75,10 +75,10 @@ npm test
 
 Provision the VM with Ansible, which includes installing and running:
 
-.language runtime
-.database
-.your application (use sync folders)
-.health check of your application
+.language runtime  
+.database  
+.your application (use sync folders)  
+.health check of your application  
 
 To run the task below, i create a yml file with ansible to create a VM in virtualbox.
 Then use vagant up to create the VM.
