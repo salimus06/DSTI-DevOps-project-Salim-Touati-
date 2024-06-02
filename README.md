@@ -97,11 +97,11 @@ To check the health of  the application : put in a browser http://localhost:1234
 
 docker build -t aksel .
 
-docker tag hello-world-docker st5740526790/aksel
-docker login
-docker push st5740526790/aksel
-
-https://hub.docker.com/repository/docker/st5740526790/aksel/general
+docker tag hello-world-docker st5740526790/aksel  
+docker login  
+docker push st5740526790/aksel  
+ 
+https://hub.docker.com/repository/docker/st5740526790/aksel/general  
 
 ![image](https://github.com/salimus06/DevOps-project-DSTI/assets/148533821/10969b09-fc14-480e-a862-018fa400bd79)
 
@@ -119,11 +119,11 @@ docker-compose up
 Then you can listen the application locally here : localhost:5000
 ## docker orchestration using Kubernetes
 
-.minikube start
-.kubectl apply -f pv.yml
-.kubectl apply -f pvc.yml
-.kubectl apply -f service.yaml
-.kubectl apply -f deployment.yaml
+.minikube start  
+.kubectl apply -f pv.yml  
+.kubectl apply -f pvc.yml  
+.kubectl apply -f service.yaml  
+.kubectl apply -f deployment.yaml  
 
 
 minikube service salimus-service
