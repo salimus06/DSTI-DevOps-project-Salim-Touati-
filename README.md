@@ -129,6 +129,11 @@ Then you can listen the application locally here : localhost:5000
 minikube service salimus-service
 ![image](https://github.com/salimus06/DevOps-project-DSTI/assets/148533821/ce221ca2-2e5d-44bb-95b1-408e311a4a08)
 
+the permanent storage mounted :
+
+![image](https://github.com/salimus06/DevOps-project-DSTI/assets/148533821/96abffca-049a-4773-8104-94a3ece6c844)
+
+
 
  ## Implement Monitoring to your containerized application
 
