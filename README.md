@@ -81,7 +81,7 @@ Provision the VM with Ansible, which includes installing and running:
 • health check of your application  
 
 To run the task below, i create a yml file with ansible to create a VM in virtualbox.
-Then use **vagant** up to create the VM.
+Then use **vagant up** to create the VM.
 
 ![image](https://github.com/salimus06/DevOps-project-DSTI/assets/148533821/c20985f1-b397-4e64-ab14-a07463e24a40)
 ![image](https://github.com/salimus06/DevOps-project-DSTI/assets/148533821/9c03f00c-be72-43b0-943f-7e708a3ee311)
@@ -95,38 +95,40 @@ To check the health of  the application : put in a browser http://localhost:1234
 
 ## Docker image
 
-docker build -t aksel .
+To create an image run this command : **docker build -t aksel .**
 
-docker tag hello-world-docker st5740526790/aksel  
-docker login  
-docker push st5740526790/aksel  
+the tag the container by running :**docker tag aksel st5740526790/aksel**  
+To log in to docker Hub run : **docker login**  
+To push the image to Docker Hub run : **docker push st5740526790/aksel**  
  
-https://hub.docker.com/repository/docker/st5740526790/aksel/general  
+This the link to the image in Docker Hub: https://hub.docker.com/repository/docker/st5740526790/aksel/general  
 
 ![image](https://github.com/salimus06/DevOps-project-DSTI/assets/148533821/10969b09-fc14-480e-a862-018fa400bd79)
 
 
 ## Docker compose
 
-To create a docker compose that will start my application, you can apply this command:
-
-docker-compose up
+To create a docker compose that will start my application, you can apply this command: **docker-compose up**
 
 ![image](https://github.com/salimus06/DevOps-project-DSTI/assets/148533821/a9ced8ed-c9c3-4eb5-821b-6fd33308daf1)
 
-
-
 Then you can listen the application locally here : localhost:5000
+
 ## docker orchestration using Kubernetes
 
-**•**minikube start  
-**•**kubectl apply -f pv.yml  
-**•**kubectl apply -f pvc.yml  
-**•**kubectl apply -f service.yaml  
-**•**kubectl apply -f deployment.yaml  
+I assume that minikube is setted up :
+
+To create docker orchestration using kubernetes run these commands:
+
+**minikube start**  
+**kubectl apply -f pv.yml**  
+**kubectl apply -f pvc.yml** 
+**kubectl apply -f service.yaml**  
+**kubectl apply -f deployment.yaml**  
 
 
-minikube service salimus-service
+To reach the application loccaly  run : **minikube service salimus-service**
+
 ![image](https://github.com/salimus06/DevOps-project-DSTI/assets/148533821/ce221ca2-2e5d-44bb-95b1-408e311a4a08)
 
 the permanent storage mounted :
