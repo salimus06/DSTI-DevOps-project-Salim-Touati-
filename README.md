@@ -154,43 +154,28 @@ kubectl apply -f -gateway.yml
 
 ![image](https://github.com/salimus06/DevOps-project-DSTI/assets/148533821/1e578e88-9810-4863-b7e2-c4b0bcea691d)
 
-I have created the destination (V1, V2).
+I have created the destination (V1, V2), to configure them run : **kubectl apply -f destination.yml**
 
-kubectl apply -f destination.yml
+
 ![image](https://github.com/salimus06/DevOps-project-DSTI/assets/148533821/ea39c13d-10fe-4078-91b6-abb44e162957)
 
-Then i have setted up the traffic shiffting between the 2 version.
+Then i have configured the traffic shiffting between the 2 version.
 
-kubectl apply -f virtuals.yaml (traffic only to V1)
-kubectl apply -f virtuals1.yaml (50% V1 & 50 & V2)
+**kubectl apply -f virtuals.yaml** (traffic only to V1)  
+**kubectl apply -f virtuals1.yaml** (50% V1 & 50 & V2)
 
 to launch the kiali dashboard:
 
 istioctl dashboard kiali
 
-Then open a tunnel to the localhost to access the application from the outside.
+Then open a tunnel to the localhost to access the application from the outside.  by running :**minikube tunnel**
 
-minikube tunnel
+Then, to create the traffic, open a browser and put : **http://127.0.0.1/**
 
-Then, to create the traffic : http://127.0.0.1/
-
-
-Then you can apply virtuals1.yaml, you will have this traffic routing.
+After, you can apply virtuals1.yaml, you will have this traffic routing.
 
 ![image](https://github.com/salimus06/DevOps-project-DSTI/assets/148533821/1392962a-4b72-4c9f-aa9d-c61d7957f25a)
 
-
-
-
-
-
-
-
-
-
-
-
- 
  ## Implement Monitoring to your containerized application
 
  Run this commande docker-compose up
