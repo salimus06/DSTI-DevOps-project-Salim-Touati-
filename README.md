@@ -134,7 +134,60 @@ the permanent storage mounted :
 ![image](https://github.com/salimus06/DevOps-project-DSTI/assets/148533821/96abffca-049a-4773-8104-94a3ece6c844)
 
 
+I assumme that the envirnment to use Istio in configured.
 
+I have created 2 versions of my application and pushed them to dockerhub
+https://hub.docker.com/repository/docker/st5740526790/istio/general
+![image](https://github.com/salimus06/DevOps-project-DSTI/assets/148533821/de634b91-c537-4125-a421-0f978330a187)
+
+ kubectl apply -f istiodeployment.yml
+![image](https://github.com/salimus06/DevOps-project-DSTI/assets/148533821/ca80a032-8614-4867-bcf8-9d31552d245f)
+![image](https://github.com/salimus06/DevOps-project-DSTI/assets/148533821/ec9d298b-f577-4bee-a1f0-7027fe563b31)
+![image](https://github.com/salimus06/DevOps-project-DSTI/assets/148533821/9c9a8c65-19e8-48e4-8804-0d677985138c)
+
+To open the applications to the outside traffic, i have created an istion ingress gateway
+
+kubectl apply -f -gateway.yml
+
+![image](https://github.com/salimus06/DevOps-project-DSTI/assets/148533821/1e578e88-9810-4863-b7e2-c4b0bcea691d)
+
+I have created the destination (V1, V2).
+
+kubectl apply -f destination.yml
+![image](https://github.com/salimus06/DevOps-project-DSTI/assets/148533821/ea39c13d-10fe-4078-91b6-abb44e162957)
+
+Then i have setted up the traffic shiffting between the 2 version.
+
+kubectl apply -f virtuals.yaml (traffic only to V1)
+kubectl apply -f virtuals1.yaml (50% V1 & 50 & V2)
+
+to launch the kiali dashboard:
+
+istioctl dashboard kiali
+
+Then open a tunnel to the localhost to access the application from the outside.
+
+minikube tunnel
+
+Then, to create the traffic : http://127.0.0.1/
+
+
+Then you can apply virtuals1.yaml, you will have this traffic routing.
+
+![image](https://github.com/salimus06/DevOps-project-DSTI/assets/148533821/1392962a-4b72-4c9f-aa9d-c61d7957f25a)
+
+
+
+
+
+
+
+
+
+
+
+
+ 
  ## Implement Monitoring to your containerized application
 
  Run this commande docker-compose up
