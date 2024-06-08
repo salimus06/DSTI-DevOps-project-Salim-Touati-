@@ -81,7 +81,7 @@ Provision the VM with Ansible, which includes installing and running:
 • health check of your application  
 
 To run the task below, i create a yml file with ansible to create a VM in virtualbox.
-Then use ##vagant up to create the VM.
+Then use **vagant** up to create the VM.
 
 ![image](https://github.com/salimus06/DevOps-project-DSTI/assets/148533821/c20985f1-b397-4e64-ab14-a07463e24a40)
 ![image](https://github.com/salimus06/DevOps-project-DSTI/assets/148533821/9c03f00c-be72-43b0-943f-7e708a3ee311)
