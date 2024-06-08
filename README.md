@@ -71,6 +71,9 @@ npm test
 
 ![image](https://github.com/salimus06/DevOps-project-DSTI/assets/148533821/793850d6-6a7e-4e19-8f9d-daf891a6e960)
 
+I have deployed theappication in Azure, here is the link to the application :
+
+
 ## Iac
 
 Provision the VM with Ansible, which includes installing and running:
@@ -120,10 +123,10 @@ I assume that minikube is setted up :
 
 To create docker orchestration using kubernetes run these commands:
 
-**minikube start**  
-**kubectl apply -f pv.yml**  
-**kubectl apply -f pvc.yml** 
-**kubectl apply -f service.yaml**  
+**minikube start**    
+**kubectl apply -f pv.yml**   
+**kubectl apply -f pvc.yml**   
+**kubectl apply -f service.yaml**    
 **kubectl apply -f deployment.yaml**  
 
 
