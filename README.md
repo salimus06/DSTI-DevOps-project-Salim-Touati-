@@ -75,6 +75,8 @@ npm test
 
 I have deployed theappication in Azure, here is the link to the application :
 
+https://azuredevops23.azurewebsites.net/
+![image](https://github.com/salimus06/DevOps-project-DSTI/assets/148533821/77ec02cc-4327-4cb0-bdf4-c5ff995204dd)
 
 ## Iac
 
