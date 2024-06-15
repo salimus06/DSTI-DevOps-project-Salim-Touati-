@@ -64,6 +64,8 @@ From the root directory of the project, run:
 ```
 npm test
 ```
+<img width="617" alt="2024-05-17_162820" src="https://github.com/salimus06/DevOps-project-DSTI/assets/148533821/8b18c825-13d9-4d40-8548-34e9b15d2b98">
+
 ## CI/CD
 
 /.github/workflows
